@@ -1,0 +1,28 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.13;
+contract Error
+{
+    function requiretest(uint _i) public pure 
+    {
+        require(_i>10,"input must have greater than 10");
+    }
+    function revertest(uint _i) public pure 
+    {
+       if (_i<=10)
+       revert("input must have less than 10");
+    }
+    uint num;
+    function asserttest() public  view 
+    {
+        
+        assert(num == 1);
+    }
+  
+    error InsufficientBalance(uint balance, uint withdrawAmount);
+    function testCustomer(uint _withdrawAmount) public pure {
+        uint bal = 1000;
+        if(bal < _withdrawAmount) {
+            revert InsufficientBalance({balance: bal, withdrawAmount: _withdrawAmount});
+        }
+    }
+}
