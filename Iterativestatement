@@ -1,0 +1,15 @@
+
+//Write a Smart Contract  For Understanding Iterative Statements
+// in Solidity Programming Language
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.13;
+contract Iterative
+{
+    function multi(uint num) external pure returns(uint)
+    {
+        uint result ;
+        for (uint i=1 ; i<=num ; i++)
+        result  *=i ;
+        return result ;
+    }
+}
